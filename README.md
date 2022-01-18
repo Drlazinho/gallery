@@ -33,4 +33,17 @@ export const insert= async (file: File) => {
   }
 }
 ~~~~
-  - Foi utilizado o v4 da lib Uuid para geração de nome aleatório, que esta como o nome createId
+* Função de deletar as fotos
+~~~~javascript
+//Deletar as photos
+export const deletePhoto = async(name: string) => {
+  let photoRef = ref(storage, `images/${name}`);
+  await deleteObject(photoRef)
+}
+~~~~
+
+Foi utilizado o v4 da lib Uuid para geração de nome aleatório, que esta como o nome createId
+
+#### Resultado
+
+<img src="./src/images/galeria.jpg" style="width:50%">
